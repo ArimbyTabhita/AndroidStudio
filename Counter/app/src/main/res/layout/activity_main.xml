@@ -8,20 +8,34 @@
     android:backgroundTint="#6FF610"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:background="#9D6DE0"
-        android:text="Belajar Android!"
+        android:text="CounterUp"
+        android:textColor="#FD0000" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CounterDown"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.948"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#D570E0"
+        android:textSize="200sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
