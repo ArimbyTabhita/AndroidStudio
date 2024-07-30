@@ -9,26 +9,28 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUP"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
+        android:onClick="btnUp"
         android:text="CounterUp"
         android:textColor="#FD0000" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnDown"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="btnDown"
         android:text="CounterDown"
         android:textColor="#FF0000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tvHasil"
         app:layout_constraintVertical_bias="0.948"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvHasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
