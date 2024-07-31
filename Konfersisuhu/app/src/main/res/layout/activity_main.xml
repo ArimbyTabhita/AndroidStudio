@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/thermometer" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/etNilai"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -60,21 +60,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnKonversi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#C793F4"
+        android:onClick="btnKonversi"
         android:text="Konversi"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/etNilai" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvHasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,6 +86,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnKonversi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
