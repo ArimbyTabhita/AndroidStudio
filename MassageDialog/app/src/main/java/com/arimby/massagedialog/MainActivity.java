@@ -1,6 +1,10 @@
 package com.arimby.massagedialog;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,38 +26,52 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-        System.out.println("onCreate");
     }
-    @Override
-    protected void onStart(){
-        super.onStart();
-
-        System.out.println("onStart");
-    }
-    @Override
-    protected void onPostResume(){
-        super.onPostResume();
-
-        System.out.println("onResume");
-    }
-    @Override
-    protected void onPause(){
-        super.onPause();
-
-        System.out.println("onPause");
-    }
-    @Override
-    protected void onStop(){
-        super.onPause();
-
-        System.out.println("onStop");
-    }
-    @Override
-    protected void onDestroy(){
-        super.onPause();
-
-        System.out.println("onDestroy");
+    public void showToast(String pesan){
+        Toast.makeText(this, pesan, Toast.LENGTH_SHORT).show();
     }
 
+    public void  showAlert(String pesan) {
 
+        AlertDialog.Builder buatAlert = new AlertDialog.Builder(this);
+        buatAlert.setTitle("PERHATIAN !");
+        buatAlert.setMessage(pesan);
+
+        buatAlert.show();
+
+    }
+
+    public void showAlertButton(String pesan){
+        AlertDialog.Builder showAlert = new AlertDialog.Builder( this);
+        showAlert.setTitle("PERINGATAN");
+        showAlert.setMessage(pesan);
+
+        showAlert.setPositiveButton("YA", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                showToast ("Data Sudah Dihapus");
+            }
+        });
+        showAlert.setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                showToast("Data Tidak Dihapus");
+            }
+        });
+
+        showAlert.show();
+    }
+
+
+    public void btnToast(View view) {
+        showToast("Have a Nice Day");
+    }
+
+    public void btnAlert(View view) {
+        showAlert("Selamat Belajar !");
+    }
+
+    public void btnAlertDialogButton(View view) {
+        showAlertButton("Yakin Akan menghapus?");
+    }
 }
