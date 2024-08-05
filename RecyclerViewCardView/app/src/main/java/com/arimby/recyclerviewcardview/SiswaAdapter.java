@@ -53,18 +53,15 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder>{
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
+                    public boolean onMenuItemClick(MenuItem item) {
 
-                        switch (item.getItemid()){
-                            case R.id.menu_simpan:
-                                Toast.makeText(context, "Simpan Data"+siswa.getNama(), Toast.LENGTH_SHORT).show();
-                                break;
-
-                            case R.id.menu_hapus:
-                                siswaList.remove(i);
-                                notifyDataSetChanged();
-                                Toast.makeText(context, siswa.getNama()+"Sudah Di Hapus", Toast.LENGTH_SHORT).show();
-                                break;
+                        int itemId = item.getItemId();
+                        if (itemId == R.id.menu_simpan) {
+                            Toast.makeText(context, "Simpan Data" + siswa.getNama(), Toast.LENGTH_SHORT).show();
+                        } else if (itemId == R.id.menu_hapus) {
+                            siswaList.remove(i);
+                            notifyDataSetChanged();
+                            Toast.makeText(context, siswa.getNama() + "Sudah Di Hapus", Toast.LENGTH_SHORT).show();
                         }
 
                         return false;
