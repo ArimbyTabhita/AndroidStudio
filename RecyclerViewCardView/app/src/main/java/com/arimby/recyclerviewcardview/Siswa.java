@@ -1,6 +1,7 @@
 package com.arimby.recyclerviewcardview;
 
 public class Siswa {
+
     private  String nama;
     private String alamat;
 
@@ -24,4 +25,5 @@ public class Siswa {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
 }
