@@ -1,6 +1,5 @@
 package com.arimby.sqlitedatabase;
 
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,17 +12,18 @@ public class Database extends SQLiteOpenHelper {
     private static final int VERSION = 1;
 
     SQLiteDatabase db;
-    public Database(@Nullable Context context) {
+
+    public Database(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
         db = this.getWritableDatabase();
     }
 
     boolean runSQL(String sql){
-        try{
-            db.execSQL(sql);
-            return true;
-        }catch (Exception e){
-            return  false;
+    try{
+        db.execSQL(sql);
+        return true;
+    }catch (Exception e){
+        return false;
         }
     }
 
@@ -37,7 +37,6 @@ public class Database extends SQLiteOpenHelper {
                 ");";
         runSQL(tblbarang);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
